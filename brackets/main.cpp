@@ -26,20 +26,20 @@ bool isBalanced(const string& input) {
 }
 
 int main() {
-    SetConsoleOutputCP(1251);
-    SetConsoleCP(1251);
+    SetConsoleOutputCP(65001);
+    SetConsoleCP(65001);
 
     while (true) {
-        cout << "Ââåä³òü ðÿäîê ç äóæêàìè: ";
+        cout << "Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ€ÑÐ´Ð¾Ðº Ð· Ð´ÑƒÐ¶ÐºÐ°Ð¼Ð¸: ";
         string input;
-        getline(cin, input);
+        if (!getline(cin, input)) return 0;
 
         if (isBalanced(input)) {
-            cout << "Ïðàâèëüíî\n";
+            cout << "ÐŸÑ€Ð°Ð²Ð¸Ð»ÑŒÐ½Ð¾\n";
             break;
         }
         else {
-            cout << "Ïîìèëêà, ââåä³òü ùå ðàç\n";
+            cout << "ÐŸÐ¾Ð¼Ð¸Ð»ÐºÐ°, Ð²Ð²ÐµÐ´Ñ–Ñ‚ÑŒ Ñ‰Ðµ Ñ€Ð°Ð·\n";
         }
     }
     return 0;
