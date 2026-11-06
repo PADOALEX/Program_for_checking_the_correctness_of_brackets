@@ -1,11 +1,22 @@
-## Balanced Brackets Checker
-## A simple C++ console application that checks if the brackets in a given string are properly balanced. It supports parentheses (), square brackets [], and curly braces {}.
+# Balanced brackets
 
-## Features
-## Reads a line of input from the user.
+[![C++ CI](https://github.com/PADOALEX/Program_for_checking_the_correctness_of_brackets/actions/workflows/ci.yml/badge.svg)](https://github.com/PADOALEX/Program_for_checking_the_correctness_of_brackets/actions/workflows/ci.yml)
 
-## Checks for correct matching and nesting of brackets.
+Stack-based validation for (), [] and {}. Non-bracket text is ignored. The interactive prompt stops cleanly at end of input.
 
-## Prompts the user to re-enter the input if it's invalid.
+## Build and run
 
-## Uses a stack-based approach for validation.
+Install Visual Studio 2022 or later with the Desktop development with C++ workload, CMake 3.20+ and Python 3.12+ for regression tests. Run from the repository root on Windows:
+
+```powershell
+cmake -S . -B build
+cmake --build build --config Release
+ctest --test-dir build -C Release --output-on-failure
+.\build\Release\app.exe
+```
+
+The original Visual Studio solution remains available. The CMake executable is named `app`; executable location depends on the selected generator. Automated tests use temporary directories for file-based scenarios and verify behavior with bounded subprocess timeouts.
+
+## Scope
+
+This is a single-user academic program, without a database, authentication or deployment. The original Windows console interface is preserved. Source text and console output now use UTF-8; CMake sets the MSVC source encoding explicitly.
